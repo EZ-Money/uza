@@ -1,0 +1,164 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 1048576 bytes for AllocateHeap
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Zero Based Compressed Oops mode in which the Java heap is
+#     placed in the first 32GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 32GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (memory/allocation.inline.hpp:61), pid=192164, tid=0x0000000000027500
+#
+# JRE version:  (8.0_202-b39) (build )
+# Java VM: OpenJDK 64-Bit Server VM (25.202-b39 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000000003022800):  JavaThread "Unknown thread" [_thread_in_vm, id=161024, stack(0x0000000002f20000,0x0000000003020000)]
+
+Stack: [0x0000000002f20000,0x0000000003020000]
+[error occurred during error reporting (printing stack bounds), id 0xc0000005]
+
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+
+Other Threads:
+
+=>0x0000000003022800 (exited) JavaThread "Unknown thread" [_thread_in_vm, id=161024, stack(0x0000000002f20000,0x0000000003020000)]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+heap address: 0x00000005c2600000, size: 8154 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 3
+Compressed class space size: 1073741824 Address: 0x00000007c0000000
+
+Heap:
+ PSYoungGen      total 152576K, used 2621K [0x0000000716200000, 0x0000000720c00000, 0x00000007c0000000)
+  eden space 131072K, 2% used [0x0000000716200000,0x000000071648f5d0,0x000000071e200000)
+  from space 21504K, 0% used [0x000000071f700000,0x000000071f700000,0x0000000720c00000)
+  to   space 21504K, 0% used [0x000000071e200000,0x000000071e200000,0x000000071f700000)
+ ParOldGen       total 348160K, used 0K [0x00000005c2600000, 0x00000005d7a00000, 0x0000000716200000)
+  object space 348160K, 0% used [0x00000005c2600000,0x00000005c2600000,0x00000005d7a00000)
+ Metaspace       used 777K, capacity 4480K, committed 4480K, reserved 1056768K
+  class space    used 74K, capacity 384K, committed 384K, reserved 1048576K
+
+Card table byte_map: [0x00000000124e0000,0x00000000134d0000] byte_map_base: 0x000000000f6cd000
+
+Marking Bits: (ParMarkBitMap*) 0x000000006bfd9f30
+ Begin Bits: [0x0000000014770000, 0x000000001c6d8000)
+ End Bits:   [0x000000001c6d8000, 0x0000000024640000)
+
+Polling page: 0x00000000012d0000
+
+CodeCache: size=245760Kb used=328Kb max_used=328Kb free=245431Kb
+ bounds [0x0000000003120000, 0x0000000003390000, 0x0000000012120000]
+ total_blobs=57 nmethods=0 adapters=38
+ compilation: enabled
+
+Compilation events (0 events):
+No events
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (10 events):
+Event: 0.021 loading class java/lang/Short
+Event: 0.021 loading class java/lang/Short done
+Event: 0.021 loading class java/lang/Integer
+Event: 0.021 loading class java/lang/Integer done
+Event: 0.021 loading class java/lang/Long
+Event: 0.022 loading class java/lang/Long done
+Event: 0.022 loading class java/lang/NullPointerException
+Event: 0.022 loading class java/lang/NullPointerException done
+Event: 0.022 loading class java/lang/ArithmeticException
+Event: 0.022 loading class java/lang/ArithmeticException done
+
+
+Dynamic libraries:
+0x00007ff7dec90000 - 0x00007ff7decc1000 	C:\Program Files\JetBrains\IntelliJ IDEA 2018.2.4\jre64\bin\java.exe
+0x00007ff9245f0000 - 0x00007ff9247dd000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ff921820000 - 0x00007ff9218d3000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ff920b10000 - 0x00007ff920da3000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ff923aa0000 - 0x00007ff923b43000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ff9236f0000 - 0x00007ff92378e000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ff9243f0000 - 0x00007ff92448e000 	C:\WINDOWS\System32\sechost.dll
+0x00007ff9235c0000 - 0x00007ff9236e2000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ff924040000 - 0x00007ff9241d7000 	C:\WINDOWS\System32\USER32.dll
+0x00007ff920e30000 - 0x00007ff920e50000 	C:\WINDOWS\System32\win32u.dll
+0x00007ff923b90000 - 0x00007ff923bb9000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ff921620000 - 0x00007ff9217ba000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ff9206c0000 - 0x00007ff920760000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ff920a10000 - 0x00007ff920b0a000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ff90dc00000 - 0x00007ff90de79000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.17763.475_none_05b43ca607202c6c\COMCTL32.dll
+0x00007ff921bb0000 - 0x00007ff921edc000 	C:\WINDOWS\System32\combase.dll
+0x00007ff920db0000 - 0x00007ff920e2e000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ff923860000 - 0x00007ff92388e000 	C:\WINDOWS\System32\IMM32.DLL
+0x000000006b730000 - 0x000000006b802000 	C:\Program Files\JetBrains\IntelliJ IDEA 2018.2.4\jre64\bin\msvcr100.dll
+0x000000006b810000 - 0x000000006c056000 	C:\Program Files\JetBrains\IntelliJ IDEA 2018.2.4\jre64\bin\server\jvm.dll
+0x00007ff923b50000 - 0x00007ff923b58000 	C:\WINDOWS\System32\PSAPI.DLL
+0x00007ff919330000 - 0x00007ff91933a000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ff9130a0000 - 0x00007ff9130a9000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ff919dd0000 - 0x00007ff919df4000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ff9237f0000 - 0x00007ff92385d000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ff919da0000 - 0x00007ff919dcd000 	C:\WINDOWS\SYSTEM32\winmmbase.dll
+0x00007ff9215d0000 - 0x00007ff92161a000 	C:\WINDOWS\System32\cfgmgr32.dll
+0x00007ff91cba0000 - 0x00007ff91cbaf000 	C:\Program Files\JetBrains\IntelliJ IDEA 2018.2.4\jre64\bin\verify.dll
+0x00007ff91b700000 - 0x00007ff91b729000 	C:\Program Files\JetBrains\IntelliJ IDEA 2018.2.4\jre64\bin\java.dll
+0x00007ff91b660000 - 0x00007ff91b676000 	C:\Program Files\JetBrains\IntelliJ IDEA 2018.2.4\jre64\bin\zip.dll
+
+VM Arguments:
+java_command: org.jetbrains.git4idea.http.GitAskPassApp Username for 'https://github.com': 
+java_class_path (initial): C:/Program Files/JetBrains/IntelliJ IDEA 2018.2.4/plugins/git4idea/lib/git4idea-rt.jar;C:/Program Files/JetBrains/IntelliJ IDEA 2018.2.4/lib/xmlrpc-2.0.1.jar;C:/Program Files/JetBrains/IntelliJ IDEA 2018.2.4/lib/commons-codec-1.10.jar;C:/Program Files/JetBrains/IntelliJ IDEA 2018.2.4/lib/util.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=G:\yagabu\development\tools\Git\mingw64/libexec/git-core;G:\yagabu\development\tools\Git\mingw64/libexec/git-core;G:\yagabu\development\tools\Git\mingw64\bin;G:\yagabu\development\tools\Git\usr\bin;C:\Users\Dan Meyer\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\MedTel\oraclexe\app\oracle\product\11.2.0\server\bin;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\AMD\ATI.ACE\Core-Static;R:\apache-ant-1.9.6\bin;C:\Program Files\7-Zip\;G:\yagabu\development\tools\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\OpenSSH-Win64;C:\WINDOWS\System32\OpenSSH\;G:\yagabu\development\tools\Microsoft VS Code\bin;E:\CAIS2\Programs\PHP\7.1.1;C:\Program Files\SlikSvn\bin;E:\CAIS2\Programs\NodeV10.13.0.x64\;C:\Program Files\PuTTY\;C:\Users\Dan Meyer\AppData\Local\Microsoft\WindowsApps;G:\yagabu\development\tools\Microsoft VS Code\bin;C:\Users\Dan Meyer\AppData\Local\GitHubDesktop\bin;C:\Users\Dan Meyer\AppData\Local\Microsoft\WindowsApps;C:\Users\Dan Meyer\AppData\Roaming\npm
+USERNAME=Dan Meyer
+DISPLAY=:0.0
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 60 Stepping 3, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10.0 , 64 bit Build 17763 (10.0.17763.475)
+
+CPU:total 8 (initial active 8) (4 cores per cpu, 2 threads per core) family 6 model 60 stepping 3, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2
+
+Memory: 4k page, physical 33396204k(15665652k free), swap 35444204k(5172k free)
+
+vm_info: OpenJDK 64-Bit Server VM (25.202-b39) for windows-amd64 JRE (1.8.0_202-release-1483-b39), built on Mar  7 2019 22:58:46 by "builduser" with MS VC++ 10.0 (VS2010)
+
+time: Sun May 12 22:42:11 2019
+timezone: Eastern Daylight Time
+elapsed time: 0 seconds (0d 0h 0m 0s)
+
